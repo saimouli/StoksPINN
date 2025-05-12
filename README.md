@@ -7,9 +7,9 @@ pip install tensorflow[and-cuda]
 ```
 
 ## To Run
+Navigate to main/continous_time_identification (Navier-Stokes)
 ```
-python3 train.py
-python3 plot.py
+python3 NavierStokes.py
 ```
 
 
