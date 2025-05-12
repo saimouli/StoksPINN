@@ -2,10 +2,13 @@
 
 ## Installations 
 ```
-conda create -n myenv python=3.9
-conda activate myenv
-pip install -r requirements.txt
-pip install pinnstorch
+pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118
+```
+
+## To Run
+```
+python3 train.py
+python3 plot.py
 ```
 ## Continuous Inverse Navier-Stokes Equation
 Given the 2D nonlinear Navier-Stokes equation:
@@ -17,19 +20,6 @@ where $u(t, x, y)$ and $v(t, x, y)$ are the x and y components of the velocity f
 $$ 0 = u_x + v_y, u = \psi_y, v = -\psi_x,$$
 
 We use a dual-output neural network to approximate $[\psi(t, x, y), p(t, x, y)]$, leading to a physics-informed neural network $[f(t, x, y), g(t, x, y)]$. 
-
-### Problem Setup 
-
-| Continuous Inverse Navier-Stokes Equation | |
-|------------------------------|---|
-| PDE equations | $f =  u_t + \lambda_1 (u u_x + v u_y) + p_x - \lambda_2  (u_{xx} + u_{yy}), g = v_t + \lambda_1 (u v_x + v  v_y) + p_y - \lambda_2  (v_{xx} + v_{yy})$ |
-| Assumptions | $u = \psi_y, v = -\psi_x$ |
-| The output of net | $[\psi(t, x, y), p(t, x, y)]$ |
-| Layers of net | $[3] + 8 \times [20] +[2]$ |
-| Sample count from collection points | $5000^*$ |
-| Sample count from solution | $5000^*$ |
-| Loss function | $\text{SSE}_s  + \text{SSE}_c$ |
-\* Same points used for collocation and solutions.
 
 
 The base code of the repository is from: https://github.com/Shengfeng233/PINN-for-NS-equation.git
