@@ -12,4 +12,6 @@ python3 plot.py
 ```
 
 
-The base code of the repository is from: https://github.com/Shengfeng233/PINN-for-NS-equation.git
+Base code is from 
+https://github.com/Shengfeng233/PINN-for-NS-equation.git
+https://github.com/chen-yingfa/pinn-torch
