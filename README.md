@@ -6,14 +6,13 @@ For GPU
 ```
 pip install tensorflow[and-cuda]
 ```
-
-## To Run
-Navigate to main/continous_time_identification (Navier-Stokes)
+For Cuda 11.8 version pytorch
 ```
-python3 NavierStokes.py
+pinstall torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118
 ```
 
 # Created a pytorch version to study ablations
+Navigate to main/continous_time_identification (Navier-Stokes)
 # initialization setup
 ```
 python3 NavierStokes_ablation.py --study_type lambda_init --iterations 60000
@@ -32,6 +31,12 @@ python3 NavierStokes_ablation.py --study_type optimizer --iterations 60000
 python3 NavierStokes_ablation.py --study_type noise --iterations 60000
 ```
 For more information, please refer to the following: (https://maziarraissi.github.io/PINNs/)
+
+## To Original Script
+Navigate to main/continous_time_identification (Navier-Stokes)
+```
+python3 NavierStokes.py
+```
 
   - Raissi, Maziar, Paris Perdikaris, and George E. Karniadakis. "[Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations](https://www.sciencedirect.com/science/article/pii/S0021999118307125)." Journal of Computational Physics 378 (2019): 686-707.
 
