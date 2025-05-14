@@ -13,6 +13,24 @@ Navigate to main/continous_time_identification (Navier-Stokes)
 python3 NavierStokes.py
 ```
 
+# Created a pytorch version to study ablations
+# initialization setup
+```
+python3 NavierStokes_ablation.py --study_type lambda_init --iterations 60000
+```
+
+# Run activation function study
+```
+python3 NavierStokes_ablation.py --study_type activation --iterations 60000
+```
+# Run optimizer study:
+```
+python3 NavierStokes_ablation.py --study_type optimizer --iterations 60000
+```
+# Run noise robustness study
+```
+python3 NavierStokes_ablation.py --study_type noise --iterations 60000
+```
 For more information, please refer to the following: (https://maziarraissi.github.io/PINNs/)
 
   - Raissi, Maziar, Paris Perdikaris, and George E. Karniadakis. "[Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations](https://www.sciencedirect.com/science/article/pii/S0021999118307125)." Journal of Computational Physics 378 (2019): 686-707.
